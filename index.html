@@ -1,67 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Luxury Perfume Startup - Discover your signature scent.">
-    <meta name="keywords" content="perfume, fragrances, luxury, scent, oud, musk">
-    <meta name="author" content="Your Name">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Perfume</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Fragrance</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="output.css">
 </head>
 <body>
+  <!-- عداد الزوار -->
+  <div class="visitor-counter">
+    <span data-ar="الزوار:" data-en="Visitors:">الزوار:</span>
+    <span id="visitorCount">0</span>
+  </div>
 
-    <header>
-        <h1>Welcome to Luxury Perfume</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#collection">Collection</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- لوحة التحكم بالخصائص -->
+  <div class="admin-panel">
+    <h3>🚩 Feature Flags</h3>
+    
+    <div class="flag-control">
+      <label data-ar="الوضع الليلي" data-en="Dark Mode">الوضع الليلي</label>
+      <div class="toggle" data-flag="darkTheme"></div>
+    </div>
+    
+    <div class="flag-control">
+      <label data-ar="بانر العروض" data-en="Promo Banner">بانر العروض</label>
+      <div class="toggle" data-flag="promoBanner"></div>
+    </div>
+    
+    <div class="flag-control">
+      <label data-ar="فئات المنتجات" data-en="Categories">فئات المنتجات</label>
+      <div class="toggle" data-flag="categories"></div>
+    </div>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Luxury Perfume is a new fragrance startup that brings the finest scents from around the world. Our mission is to create unforgettable aromas that reflect elegance and identity.</p>
+    <div class="flag-control">
+      <label data-ar="الكاروسيل" data-en="Carousel">الكاروسيل</label>
+      <div class="toggle" data-flag="carousel"></div>
+    </div>
+
+    <!-- زر تغيير اللغة -->
+    <div style="margin-top:10px;">
+      <button id="langSwitch">EN</button>
+    </div>
+  </div>
+
+  <!-- الهيدر -->
+  <header>
+    <div class="container">
+      <div class="hero-content">
+        <h1 data-ar="🌸 My Fragrance" data-en="🌸 My Fragrance">🌸 My Fragrance</h1>
+        <p data-ar="عالم العطور الفاخرة" data-en="World of Luxury Perfumes">عالم العطور الفاخرة</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- شريط التنقل -->
+  <nav>
+    <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+    <a href="#products" data-ar="المنتجات" data-en="Products">المنتجات</a>
+    <a href="#categories" data-ar="الفئات" data-en="Categories">الفئات</a>
+    <a href="#contact" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a>
+  </nav>
+
+  <!-- بانر العروض -->
+  <div class="promotional-banner" id="promoBanner">
+    <div class="container" data-ar="🎉 عرض محدود: خصم 30% على جميع العطور!" data-en="🎉 Limited Offer: 30% off all perfumes!">
+      🎉 عرض محدود: خصم 30% على جميع العطور!
+    </div>
+  </div>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="container">
+
+    <!-- الكاروسيل -->
+    <div class="carousel-container" id="carousel" style="display: none;">
+      <div class="carousel" id="carouselTrack">
+        <div class="carousel-slide" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDgwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkMSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2E5NzQ1YiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzZiNGEzYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJ1cmwoI2dyYWQxKSIvPjwvc3ZnPg==');">
+          <span data-ar="🌹 عطور نسائية فاخرة" data-en="🌹 Luxury Women's Perfumes">🌹 عطور نسائية فاخرة</span>
+        </div>
+        <div class="carousel-slide" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDgwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkMiIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzRiMmUyZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzZiNGEzYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJ1cmwoI2dyYWQyKSIvPjwvc3ZnPg==');">
+          <span data-ar="🌊 عطور رجالية مميزة" data-en="🌊 Distinguished Men's Perfumes">🌊 عطور رجالية مميزة</span>
+        </div>
+        <div class="carousel-slide" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDgwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkMyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2ZmNmI2YiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2VlNWEyNCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJ1cmwoI2dyYWQzKSIvPjwvc3ZnPg==');">
+          <span data-ar="🍊 عروض خاصة" data-en="🍊 Special Offers">🍊 عروض خاصة</span>
+        </div>
+      </div>
+      <button class="carousel-prev" onclick="prevSlide()">❮</button>
+      <button class="carousel-next" onclick="nextSlide()">❯</button>
+      <div class="carousel-nav">
+        <span class="carousel-dot active" onclick="currentSlide(1)"></span>
+        <span class="carousel-dot" onclick="currentSlide(2)"></span>
+        <span class="carousel-dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
+
+    <!-- الفئات -->
+    <section id="categories" class="section">
+      <h2 class="section-title" data-ar="فئات المنتجات" data-en="Product Categories">فئات المنتجات</h2>
+      <div class="categories">
+        <div class="category-card">
+          <div class="category-icon">🌹</div>
+          <div class="category-name" data-ar="عطور نسائية" data-en="Women's Perfumes">عطور نسائية</div>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">🌊</div>
+          <div class="category-name" data-ar="عطور رجالية" data-en="Men's Perfumes">عطور رجالية</div>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">🍊</div>
+          <div class="category-name" data-ar="عطور منعشة" data-en="Fresh Perfumes">عطور منعشة</div>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">🌸</div>
+          <div class="category-name" data-ar="عطور شرقية" data-en="Oriental Perfumes">عطور شرقية</div>
+        </div>
+      </div>
     </section>
+    
+    <!-- المنتجات -->
+    <section id="products" class="section">
+      <h2 class="section-title" data-ar="منتجاتنا المميزة" data-en="Our Featured Products">منتجاتنا المميزة</h2>
+      
+      <div class="products-grid">
+        <!-- المنتج 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <span>🌹</span>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name" data-ar="عطر الورد الفاخر" data-en="Luxury Rose Perfume">عطر الورد الفاخر</h3>
+            <p class="product-description" data-ar="عطر نسائي رائع برائحة الورد الطبيعي" data-en="A wonderful women's perfume with natural rose scent">عطر نسائي رائع برائحة الورد الطبيعي</p>
+            <div class="product-price" data-ar="250 ريال" data-en="SAR 250">250 ريال</div>
+            <button class="product-btn" data-ar="اشتري الآن" data-en="Buy Now">اشتري الآن</button>
+          </div>
+        </div>
 
-    <section id="collection">
-        <h2>Our Collection</h2>
-        <ul>
-            <li>Royal Oud</li>
-            <li>Amber Rose</li>
-            <li>Fresh Citrus</li>
-            <li>Night Musk</li>
-        </ul>
-    </section>
+        <!-- المنتج 2 -->
+        <div class="product-card">
+          <div class="product-image">
+            <span>🍊</span>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name" data-ar="عطر الحمضيات المنعش" data-en="Citrus Fresh Perfume">عطر الحمضيات المنعش</h3>
+            <p class="product-description" data-ar="عطر للجنسين بنفحات الحمضيات المنعشة" data-en="Unisex perfume with fresh citrus notes">عطر للجنسين بنفحات الحمضيات المنعشة</p>
+            <div class="product-price" data-ar="200 ريال" data-en="SAR 200">200 ريال</div>
+            <button class="product-btn" data-ar="اشتري الآن" data-en="Buy Now">اشتري الآن</button>
+          </div>
+        </div>
 
-    <section id="team">
-        <h2>Our Team</h2>
-        <p>We are a team of passionate perfumers, designers, and scent experts dedicated to redefining the perfume experience.</p>
-    </section>
+        <!-- المنتج 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <span>🌊</span>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name" data-ar="عطر البحر العميق" data-en="Deep Sea Perfume">عطر البحر العميق</h3>
+            <p class="product-description" data-ar="عطر رجالي بنفحات بحرية منعشة" data-en="Men's perfume with refreshing marine notes">عطر رجالي بنفحات بحرية منعشة</p>
+            <div class="product-price" data-ar="300 ريال" data-en="SAR 300">300 ريال</div>
+            <button class="product-btn" data-ar="اشتري الآن" data-en="Buy Now">اشتري الآن</button>
+          </div>
+        </div>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form action="#">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br><br>
-
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
-
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message"></textarea><br><br>
-
-            <input type="submit" value="Send">
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Luxury Perfume. All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
+        <!-- المنتج 4 -->
+        <div class="product-card">
+          <div class="product-image">
+            <span>🌸</span>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name" data-ar="عطر الياسمين الشرقي" data-en="Oriental Jasmine Perfume">عطر الياسمين الشرقي</h3>
+            <p class="product-description" data-ar="عطر نسائي بنفحات الياسمين الشرقية" data-en="Women's perfume with oriental jasmine notes">عطر نسائي بنفحات الياسمين الشرقية</p>
+            <div class="product-price" data-ar="350 ريال" data-en="SAR 350">350 ريال</div>
