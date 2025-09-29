@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===========================================
-// 🌤️ WEATHER & TIME CARD
+// WEATHER & TIME CARD
 // ===========================================
 class WeatherTimeCard {
   constructor() {
@@ -479,9 +479,9 @@ function initWeatherCard() {
   weatherCard = new WeatherTimeCard();
   
   // البحث عن مكان لإضافة الكارد
-  const container = document.querySelector('.container') || 
-                    document.querySelector('main') || 
-                    document.body;
+  const container = document.getElementById('weatherContainer') || document.body;
+container.appendChild(weatherCard.createCard());
+
   
   // إضافة الكارد للصفحة
   const cardElement = weatherCard.createCard();
